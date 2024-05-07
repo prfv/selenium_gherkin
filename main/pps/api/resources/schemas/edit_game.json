@@ -1,0 +1,485 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "votingIssueId",
+        "status",
+        "validName",
+        "id",
+        "name",
+        "facilitator",
+        "allowFacilitatorVoting",
+        "userOwner",
+        "deck",
+        "isDonutChart",
+        "playersInGame",
+        "issues"
+    ],
+    "properties": {
+        "votingIssueId": {
+            "type": "null",
+            "default": null,
+            "title": "The votingIssueId Schema",
+            "examples": [
+                null
+            ]
+        },
+        "status": {
+            "type": "string",
+            "default": "",
+            "title": "The status Schema",
+            "examples": [
+                "INITIAL"
+            ]
+        },
+        "validName": {
+            "type": "boolean",
+            "default": false,
+            "title": "The validName Schema",
+            "examples": [
+                true
+            ]
+        },
+        "id": {
+            "type": "string",
+            "default": "",
+            "title": "The id Schema",
+            "examples": [
+                "-8868518282407389591"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "default": "",
+            "title": "The name Schema",
+            "examples": [
+                "Game 1"
+            ]
+        },
+        "facilitator": {
+            "type": "string",
+            "default": "",
+            "title": "The facilitator Schema",
+            "examples": [
+                "User.Admin.JS"
+            ]
+        },
+        "allowFacilitatorVoting": {
+            "type": "boolean",
+            "default": false,
+            "title": "The allowFacilitatorVoting Schema",
+            "examples": [
+                true
+            ]
+        },
+        "userOwner": {
+            "type": "string",
+            "default": "",
+            "title": "The userOwner Schema",
+            "examples": [
+                "User.Admin.JS"
+            ]
+        },
+        "deck": {
+            "type": "object",
+            "default": {},
+            "title": "The deck Schema",
+            "required": [
+                "id",
+                "name",
+                "cards",
+                "userOwner",
+                "active",
+                "custom"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The id Schema",
+                    "examples": [
+                        "-6401911659512774465"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The name Schema",
+                    "examples": [
+                        "Fibonacci"
+                    ]
+                },
+                "cards": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The cards Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "id",
+                            "value"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "title": "The id Schema",
+                                "examples": [
+                                    "-6401911659512774465",
+                                    "-6401911659512774464",
+                                    "-6401911659512774463",
+                                    "-6401911659512774462",
+                                    "-6401911659512774461",
+                                    "-6401911659512774460",
+                                    "-6401911659512774459",
+                                    "-6401911659512774458"
+                                ]
+                            },
+                            "value": {
+                                "type": "string",
+                                "title": "The value Schema",
+                                "examples": [
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "5",
+                                    "8",
+                                    "13",
+                                    "21",
+                                    "34"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "id": "-6401911659512774465",
+                            "value": "1"
+                        },
+                        {
+                            "id": "-6401911659512774464",
+                            "value": "2"
+                        },
+                        {
+                            "id": "-6401911659512774463",
+                            "value": "3"
+                        },
+                        {
+                            "id": "-6401911659512774462",
+                            "value": "5"
+                        },
+                        {
+                            "id": "-6401911659512774461",
+                            "value": "8"
+                        },
+                        {
+                            "id": "-6401911659512774460",
+                            "value": "13"
+                        },
+                        {
+                            "id": "-6401911659512774459",
+                            "value": "21"
+                        },
+                        {
+                            "id": "-6401911659512774458",
+                            "value": "34"
+                        }]
+                    },
+                    "examples": [
+                        [{
+                            "id": "-6401911659512774465",
+                            "value": "1"
+                        },
+                        {
+                            "id": "-6401911659512774464",
+                            "value": "2"
+                        },
+                        {
+                            "id": "-6401911659512774463",
+                            "value": "3"
+                        },
+                        {
+                            "id": "-6401911659512774462",
+                            "value": "5"
+                        },
+                        {
+                            "id": "-6401911659512774461",
+                            "value": "8"
+                        },
+                        {
+                            "id": "-6401911659512774460",
+                            "value": "13"
+                        },
+                        {
+                            "id": "-6401911659512774459",
+                            "value": "21"
+                        },
+                        {
+                            "id": "-6401911659512774458",
+                            "value": "34"
+                        }]
+                    ]
+                },
+                "userOwner": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The userOwner Schema",
+                    "examples": [
+                        "system"
+                    ]
+                },
+                "active": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "The active Schema",
+                    "examples": [
+                        true
+                    ]
+                },
+                "custom": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "The custom Schema",
+                    "examples": [
+                        false
+                    ]
+                }
+            },
+            "examples": [{
+                "id": "-6401911659512774465",
+                "name": "Fibonacci",
+                "cards": [{
+                    "id": "-6401911659512774465",
+                    "value": "1"
+                },
+                {
+                    "id": "-6401911659512774464",
+                    "value": "2"
+                },
+                {
+                    "id": "-6401911659512774463",
+                    "value": "3"
+                },
+                {
+                    "id": "-6401911659512774462",
+                    "value": "5"
+                },
+                {
+                    "id": "-6401911659512774461",
+                    "value": "8"
+                },
+                {
+                    "id": "-6401911659512774460",
+                    "value": "13"
+                },
+                {
+                    "id": "-6401911659512774459",
+                    "value": "21"
+                },
+                {
+                    "id": "-6401911659512774458",
+                    "value": "34"
+                }],
+                "userOwner": "system",
+                "active": true,
+                "custom": false
+            }]
+        },
+        "isDonutChart": {
+            "type": "boolean",
+            "default": false,
+            "title": "The isDonutChart Schema",
+            "examples": [
+                true
+            ]
+        },
+        "playersInGame": {
+            "type": "array",
+            "default": [],
+            "title": "The playersInGame Schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "A Schema",
+                "required": [
+                    "playerDetails",
+                    "isSpectator",
+                    "isAvailableToRevealCards",
+                    "isAvailableToManageIssues",
+                    "isPlaying"
+                ],
+                "properties": {
+                    "playerDetails": {
+                        "type": "object",
+                        "default": {},
+                        "title": "The playerDetails Schema",
+                        "required": [
+                            "id",
+                            "name",
+                            "userOwner"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The id Schema",
+                                "examples": [
+                                    "-8807051324491714924"
+                                ]
+                            },
+                            "name": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The name Schema",
+                                "examples": [
+                                    "User.Admin.JS"
+                                ]
+                            },
+                            "userOwner": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The userOwner Schema",
+                                "examples": [
+                                    "User.Admin.JS"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "id": "-8807051324491714924",
+                            "name": "User.Admin.JS",
+                            "userOwner": "User.Admin.JS"
+                        }]
+                    },
+                    "isSpectator": {
+                        "type": "boolean",
+                        "default": false,
+                        "title": "The isSpectator Schema",
+                        "examples": [
+                            false
+                        ]
+                    },
+                    "isAvailableToRevealCards": {
+                        "type": "boolean",
+                        "default": false,
+                        "title": "The isAvailableToRevealCards Schema",
+                        "examples": [
+                            true
+                        ]
+                    },
+                    "isAvailableToManageIssues": {
+                        "type": "boolean",
+                        "default": false,
+                        "title": "The isAvailableToManageIssues Schema",
+                        "examples": [
+                            true
+                        ]
+                    },
+                    "isPlaying": {
+                        "type": "boolean",
+                        "default": false,
+                        "title": "The isPlaying Schema",
+                        "examples": [
+                            true
+                        ]
+                    }
+                },
+                "examples": [{
+                    "playerDetails": {
+                        "id": "-8807051324491714924",
+                        "name": "User.Admin.JS",
+                        "userOwner": "User.Admin.JS"
+                    },
+                    "isSpectator": false,
+                    "isAvailableToRevealCards": true,
+                    "isAvailableToManageIssues": true,
+                    "isPlaying": true
+                }]
+            },
+            "examples": [
+                [{
+                    "playerDetails": {
+                        "id": "-8807051324491714924",
+                        "name": "User.Admin.JS",
+                        "userOwner": "User.Admin.JS"
+                    },
+                    "isSpectator": false,
+                    "isAvailableToRevealCards": true,
+                    "isAvailableToManageIssues": true,
+                    "isPlaying": true
+                }]
+            ]
+        },
+        "issues": {
+            "type": "array",
+            "default": [],
+            "title": "The issues Schema",
+            "items": {},
+            "examples": [
+                []
+            ]
+        }
+    },
+    "examples": [{
+        "votingIssueId": null,
+        "status": "INITIAL",
+        "validName": true,
+        "id": "-8868518282407389591",
+        "name": "Game 1",
+        "facilitator": "User.Admin.JS",
+        "allowFacilitatorVoting": true,
+        "userOwner": "User.Admin.JS",
+        "deck": {
+            "id": "-6401911659512774465",
+            "name": "Fibonacci",
+            "cards": [{
+                "id": "-6401911659512774465",
+                "value": "1"
+            },
+            {
+                "id": "-6401911659512774464",
+                "value": "2"
+            },
+            {
+                "id": "-6401911659512774463",
+                "value": "3"
+            },
+            {
+                "id": "-6401911659512774462",
+                "value": "5"
+            },
+            {
+                "id": "-6401911659512774461",
+                "value": "8"
+            },
+            {
+                "id": "-6401911659512774460",
+                "value": "13"
+            },
+            {
+                "id": "-6401911659512774459",
+                "value": "21"
+            },
+            {
+                "id": "-6401911659512774458",
+                "value": "34"
+            }],
+            "userOwner": "system",
+            "active": true,
+            "custom": false
+        },
+        "isDonutChart": true,
+        "playersInGame": [{
+            "playerDetails": {
+                "id": "-8807051324491714924",
+                "name": "User.Admin.JS",
+                "userOwner": "User.Admin.JS"
+            },
+            "isSpectator": false,
+            "isAvailableToRevealCards": true,
+            "isAvailableToManageIssues": true,
+            "isPlaying": true
+        }],
+        "issues": []
+    }]
+}

@@ -1,0 +1,38 @@
+{
+    "title": "Create Deck",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "isCustom": {
+            "type": "boolean"
+        },
+        "isActive": {
+            "type": "boolean"
+        },
+        "cards": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": [ "id", "value"] 
+            }      
+        },
+        "userOwner": {
+            "type": "string"
+        }
+    },
+    "required": [ "id", "name", "cards", "userOwner"]
+}
+    

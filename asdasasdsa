@@ -1,0 +1,70 @@
+@ui @decks
+Feature: Custom voting systems
+  Test performed on UI, contains test cases related to custom voting systems.
+
+  @decks01 @functional @smoke @acceptance
+  Scenario: Create, edit and delete a custom voting system
+    When the "user1" logs into the PPS
+    And the user clicks on the Voting Systems option in the navbar
+    And the user selects from the menu the "+" option to "add" a custom voting system
+    And the user uses the following data to "create" a custom voting system:
+      | Key                 | value            |
+      | Voting System Name  | Deck decks01     |
+      | Voting System Cards | 2,4,6,8,10,12,14 |
+    Then the user "should" see the following data in the list of voting systems:
+      | Key                 | value              |
+      | Voting System Name  | Deck decks01       |
+      | Voting System Cards | (2,4,6,8,10,12,14) |
+    And the user should see the "trash" icon to delete the created voting system
+    And the user selects from the menu the "Deck decks01" option to "edit" a custom voting system
+    And the user uses the following data to "edit" a custom voting system:
+      | Key                 | value           |
+      | Voting System Name  | New decks01     |
+      | Voting System Cards | 1,3,5,7,9,11,13 |
+    And the user "should" see the following data in the list of voting systems:
+      | Key                 | value             |
+      | Voting System Name  | New decks01       |
+      | Voting System Cards | (1,3,5,7,9,11,13) |
+    And the user deletes the "New decks01" voting system
+    And the user "should not" see the following data in the list of voting systems:
+      | Key                 | value             |
+      | Voting System Name  | New decks01       |
+      | Voting System Cards | (1,3,5,7,9,11,13) |
+
+  @decks15 @decks14 @decks04 @negative @boundary
+  Scenario: Verify deck field restrictions
+  #Verify that is not possible to add less than 2 cards to a deck
+  #Verify that is not possible to add more than 15 cards
+  #Verify that is not possible to end with a comma.
+    Given the "user1" logs into the PPS
+    When the user clicks on the Voting Systems option in the navbar
+    And the user selects from the menu the "+" option to "add" a custom voting system
+    And the user fill the deck field with:
+      | Key                 | value               |
+      | Voting System Cards | (1)                 |
+    Then the user should see the "The minimum number of cards required is 2" error message on deck field
+    And the user fill the deck field with:
+      | Key                 | value                                     |
+      | Voting System Cards | (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)  |
+    And the user should see the "The maximum number of cards required is 15" error message on deck field
+    And the user fill the deck field with:
+      | Key                 | value                       |
+      | Voting System Cards | 1,2,3,4,5,6,7,8,9,          |
+    And the user should see the "Cards must have the following structure: (Ex: 1,2,3) or (Ex: A,B,C) and the values must have a length of 1 to 3" error message on deck field
+
+
+
+
+logger.info("The voting System Name have ",(this.body["Voting System Name"]).length," characters")
+    const isVisibleDeckName = await WebDriverActions.getWebElement(votingSystemMenu.votingSystemOption(this.body["Voting System Name"]));
+    expect(await isVisibleDeckName.isDisplayed()).to.equal(false);
+    const name = (this.body["Voting System Name"]).slice(0,number)
+    logger.info("The voting System Name have ",name.length," characters")
+    isVisibleDeckName = await WebDriverActions.getWebElement(votingSystemMenu.votingSystemOption(name));
+    expect(await isVisibleDeckName.isDisplayed()).to.equal(true);
+    //await WebDriverConditions.waitUntilElementIsLocated(votingSystemMenu.votingSystemOption(this.deck["Voting System Name"]));
+    //await WebDriverConditions.waitUntilElementIsVisible(votingSystemMenu.votingSystemOption(this.deck["Voting System Name"]));
+    //const votingSystemName = await WebDriverActions.getText(votingSystemMenu.votingSystemOption(this.deck["Voting System Name"]));
+    //const length = votingSystemName.length;
+    //logger.info("The voting System Name have ",length," characters")
+    //expect(length).to.equal(parseInt(number));

@@ -1,0 +1,24 @@
+
+{
+    "environment": "production",
+    "timeout":"5000",
+    "cucumberStepTimeout":"60000",
+    "log-level": "debug",
+    "headers":"application/json",
+    "randomGenerator": {
+        "prefix": "AUTO_",
+        "name": "chance"
+    },
+    "capabilities": {
+        "headless": false,
+        "standalone": false,
+        "language": "en",
+        "selenium-grid": "http://10.24.48.67:5444/wd/hub",
+        "size": {
+          "height": 1080,
+          "width": 1920
+        }
+    } ,
+    "uiStepTimeout": 30000,
+    "visualTestingTimeout": 5000
+}

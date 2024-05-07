@@ -1,0 +1,49 @@
+{
+    "local": {
+        "api-url":"http://localhost",
+        "ui-url":"http://localhost:3000",
+        "swaggerDoc": "/v2/api-docs",
+        "users": {
+            "user1": {
+                "username":"",
+                "password":""
+            },
+            "user2": {
+                "username":"",
+                "password":""
+            },
+            "user3": {
+                "username":"",
+                "password":""
+            }
+        },
+        "port" : {
+            "auth": "8764",
+            "api": "8763"
+        }
+    },
+    
+    "production": {
+        "api-url":"http://10.24.48.66",
+        "ui-url":"http://10.24.48.66:3000",
+        "swaggerDoc": "/v2/api-docs",
+        "users": {
+            "user1": {
+                "username":"User.Admin.JS",
+                "password":"Automation_123"
+            },
+            "user2": {
+                "username":"User.Player.JS",
+                "password":"Automation_456"
+            },
+            "user3": {
+                "username":"User.Player2.JS",
+                "password":"Automation_789"
+            }
+        },
+        "port" : {
+            "auth": "8764",
+            "api": "8763"
+        }
+    }
+}

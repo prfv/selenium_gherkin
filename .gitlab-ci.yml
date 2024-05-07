@@ -1,0 +1,103 @@
+stages:
+  - Eslint
+  - Unit Test
+  - API Test
+  - UI Test
+
+
+cache:
+  paths:
+    - node_modules
+
+before_script:
+  - node --version
+  - npm install
+
+Eslint:
+  stage: Eslint
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  script:
+    - echo "*** Running linter... ***"
+    - npm run check-code
+    - npm run check-features
+  tags:
+    - ppsjs    
+
+Unit Test:
+  stage: Unit Test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  script:
+    - echo "*** Running unit tests... ***"
+    - npm run unitTests
+  artifacts:
+    when: always
+    name: unit-test-artifacts_$CI_JOB_STARTED_AT
+    paths:
+      - reports/unitTestReport/
+    expire_in: 1 week
+  tags:
+    - ppsjs
+
+API Test:
+  stage: API Test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - when: manual
+  allow_failure: true
+  script:
+    - echo "*** Running API tests... ***"
+    - echo "$PWD"
+    - npm run apiTests
+  after_script:
+    - echo "*** Creating Cucumber report to download... ***"
+    - npm run generateReport
+  artifacts:
+    when: always
+    name: API-test-artifacts_$CI_JOB_STARTED_AT
+    paths:
+      - reports/cucumber/cucumberReport.html
+      - reports/logs/exec.log
+    expire_in: 1 week
+  tags:
+    - ppsjs
+
+UI Test:
+  stage: UI Test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - when: manual
+  allow_failure: true
+  services:
+    - selenium/standalone-chrome
+  script:
+    - echo "*** Running UI tests... ***"
+    - echo "$PWD"
+    - npm run uiProductionTests
+  after_script:
+    - echo "*** Creating Cucumber report to download... ***"
+    - npm run generateReport
+  artifacts:
+    when: always
+    name: UI-test-artifacts_$CI_JOB_STARTED_AT
+    paths:
+      - reports/cucumber/cucumberReport.html
+      - reports/logs/exec.log
+    expire_in: 1 week
+  tags:
+    - ppsjs
+    
+Visual Test:
+  stage: Visual Test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - when: manual
+  allow_failure: true
+  script:
+    - echo "*** Running UI tests... ***"
+    - echo "$PWD"
+    - echo token.txt
+    - npm run vtTests
+  tags:
+    - ppsjs

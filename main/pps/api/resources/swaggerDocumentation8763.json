@@ -1,0 +1,1669 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "description": "Api Documentation",
+      "version": "1.0",
+      "title": "Api Documentation",
+      "termsOfService": "urn:tos",
+      "contact": {},
+      "license": {
+         "name": "Apache 2.0",
+         "url": "http://www.apache.org/licenses/LICENSE-2.0"
+      }
+   },
+   "host": "localhost:8763",
+   "basePath": "/",
+   "tags": [
+      {
+         "name": "basic-error-controller",
+         "description": "Basic Error Controller"
+      },
+      {
+         "name": "deck-controller",
+         "description": "Deck Controller"
+      },
+      {
+         "name": "game-controller",
+         "description": "Game Controller"
+      }
+   ],
+   "paths": {
+      "/error": {
+         "get": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         },
+         "head": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingHEAD",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "204": {
+                  "description": "No Content"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            }
+         },
+         "post": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingPOST",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "201": {
+                  "description": "Created"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingPUT",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "201": {
+                  "description": "Created"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "204": {
+                  "description": "No Content"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            }
+         },
+         "options": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingOPTIONS",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "204": {
+                  "description": "No Content"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            }
+         },
+         "patch": {
+            "tags": [
+               "basic-error-controller"
+            ],
+            "summary": "error",
+            "operationId": "errorUsingPATCH",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "type": "object",
+                     "additionalProperties": {
+                        "type": "object"
+                     }
+                  }
+               },
+               "204": {
+                  "description": "No Content"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            }
+         }
+      },
+      "/planning-poker/decks": {
+         "get": {
+            "tags": [
+               "deck-controller"
+            ],
+            "summary": "Fetch all decks by user",
+            "operationId": "FetchAllDecksUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Fetch all decks by user successfully",
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "$ref": "#/definitions/DeckDTORes"
+                     }
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         },
+         "post": {
+            "tags": [
+               "deck-controller"
+            ],
+            "summary": "Post a new custom deck",
+            "operationId": "createDeckUsingPOST",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "deckDTO",
+                  "description": "deckDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/DeckDTOReq"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/DeckDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created, when deck was created successfully and returns the object of the created deck in the body"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               },
+               "409": {
+                  "description": "Duplicate name error, when there is already a registered"
+               },
+               "422": {
+                  "description": "Invalid input error, when the payload contains a required attribute empty"
+               }
+            }
+         }
+      },
+      "/planning-poker/decks/{id}": {
+         "get": {
+            "tags": [
+               "deck-controller"
+            ],
+            "summary": "Fetch a deck",
+            "description": "Get a deck by id",
+            "operationId": "fetchDeckByIdUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Fetch a deck by id successfully",
+                  "schema": {
+                     "$ref": "#/definitions/DeckDTORes"
+                  }
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Descriptive message for a Deck not found"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "deck-controller"
+            ],
+            "summary": "editDeck",
+            "operationId": "editDeckUsingPUT",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "deckDTO",
+                  "description": "deckDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/DeckDTOReq"
+                  }
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Edited, when deck was edited successfully and returns the edited deck in the body",
+                  "schema": {
+                     "$ref": "#/definitions/DeckDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Descriptive message for a Deck not found"
+               },
+               "409": {
+                  "description": "Duplicate name error, when there is already a registered deck with that name sent in the payload"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "deck-controller"
+            ],
+            "summary": "Delete a deck",
+            "operationId": "deleteDeckUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/ResponseEntity"
+                  }
+               },
+               "204": {
+                  "description": "Deleted, when a deck was deleted successfully"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Unauthorized access when attempting to delete deck"
+               },
+               "405": {
+                  "description": "Not allowed operation when attempting to delete default deck"
+               }
+            }
+         }
+      },
+      "/planning-poker/games": {
+         "post": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Post a new game",
+            "operationId": "createGameUsingPOST",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "gameDTO",
+                  "description": "gameDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/GameDTOReq"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created, when game was created successfully and returns the object of the created deck in the body"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               },
+               "409": {
+                  "description": "Duplicate name error, when there is already a registered"
+               },
+               "422": {
+                  "description": "Invalid input error, when the payload contains a required attribute empty"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/batch-delete": {
+         "delete": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Delete one or more games",
+            "operationId": "deleteGamesUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "gameIds",
+                  "description": "gameIds",
+                  "required": true,
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "integer",
+                        "format": "int64"
+                     }
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/ResponseEntity"
+                  }
+               },
+               "204": {
+                  "description": "Deleted, when games were deleted successfully"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Unauthorized access when attempting to delete games"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/details": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Fetch all games details by user",
+            "operationId": "fetchAllGameDetailsByUserUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "userOwner",
+                  "in": "query",
+                  "description": "userOwner",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Fetch all games details by user successfully",
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "$ref": "#/definitions/GameDetailsDTO"
+                     }
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/issues/{id}": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Retrieve an Issue",
+            "description": "Get an issue by its id",
+            "operationId": "fetchIssueByIdUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful issue retrieval",
+                  "schema": {
+                     "$ref": "#/definitions/IssueDTORes"
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Edit an issue",
+            "operationId": "editIssueUsingPUT",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "issueDTO",
+                  "description": "issueDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/IssueDTOReq"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Edited, when issue was edited successfully and returns the edited game in the body",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Descriptive message for an Issue not found"
+               },
+               "409": {
+                  "description": "Duplicate name error, when there is already a registered issue with that name sent in the payload"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Remove an issue",
+            "operationId": "removeIssueUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/ResponseEntity"
+                  }
+               },
+               "204": {
+                  "description": "Deleted, when an issue was deleted successfully"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Unauthorized access when attempting to delete issue"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/issues/{issueId}": {
+         "post": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Add a vote to an issue",
+            "operationId": "addVoteUsingPOST",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "issueId",
+                  "in": "path",
+                  "description": "issueId",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "issueVoteDTO",
+                  "description": "issueVoteDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/IssueVoteDTOReq"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created, when vote was created successfully and returns the object of the game with the created issue and votes in the body"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               },
+               "422": {
+                  "description": "Invalid input error, when the payload contains a required attribute empty"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/issues/{issueId}/players/{playerName}": {
+         "delete": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Remove a vote from an issue",
+            "operationId": "removeVoteUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "issueId",
+                  "in": "path",
+                  "description": "issueId",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "playerName",
+                  "in": "path",
+                  "description": "playerName",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/ResponseEntity"
+                  }
+               },
+               "204": {
+                  "description": "Deleted, when a vote from an issue was deleted successfully"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/issues/{issueId}/votes": {
+         "put": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Edit a vote on an issue",
+            "operationId": "editVoteUsingPUT",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "issueId",
+                  "in": "path",
+                  "description": "issueId",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "issueVoteDTO",
+                  "description": "issueVoteDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/IssueVoteDTOReq"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Edited, when the vote was edited successfully and returns the object of the game with the edited issue and votes in the body",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               },
+               "422": {
+                  "description": "Invalid input error, when the payload contains a required attribute empty"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/user/{userOwner}": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Fetch all games by user",
+            "operationId": "FetchAllGamesByUserUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "userOwner",
+                  "in": "path",
+                  "description": "userOwner",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Fetch all games by user successfully",
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "$ref": "#/definitions/GameDTORes"
+                     }
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{gameId}/export-csv-issues": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Get a csv file with the issues in a game",
+            "operationId": "exportIssuesToCSVUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "gameId",
+                  "in": "path",
+                  "description": "gameId",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "When the file was generated successfully",
+                  "schema": {
+                     "$ref": "#/definitions/StreamingOutput"
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Descriptive message for a Game not found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{gameId}/import-csv-issues": {
+         "post": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Import issues from a csv file",
+            "operationId": "importIssuesFromCSVUsingPOST",
+            "consumes": [
+               "multipart/form-data"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "file",
+                  "description": "file",
+                  "required": true,
+                  "schema": {
+                     "type": "string",
+                     "format": "binary"
+                  }
+               },
+               {
+                  "name": "gameId",
+                  "in": "path",
+                  "description": "gameId",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created, when issues were added successfully and returns the object of the game with the created issues in the body"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{gameId}/issues": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Fetch all issues in a game",
+            "operationId": "fetchAllIssuesInGameUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "gameId",
+                  "in": "path",
+                  "description": "gameId",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Fetch all issues in a game successfully",
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "$ref": "#/definitions/IssueDTORes"
+                     }
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{gameId}/players/{playerId}": {
+         "patch": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Partially update a player in game",
+            "operationId": "updatePlayerInGameStatusUsingPATCH",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "gameId",
+                  "in": "path",
+                  "description": "gameId",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "playerId",
+                  "in": "path",
+                  "description": "playerId",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "propertyName",
+                  "in": "query",
+                  "description": "propertyName",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "propertyValue",
+                  "in": "query",
+                  "description": "propertyValue",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Edited, when the player in game was edited successfully and returns the edited game in the body",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "204": {
+                  "description": "No Content"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Descriptive message for an PlayerInGame not found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{id}": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Retrieve a game",
+            "description": "Get a game by its id",
+            "operationId": "findGameByIdUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful game retrieval",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Edit a game",
+            "operationId": "editGameUsingPUT",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "gameDTO",
+                  "description": "gameDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/GameDTOReq"
+                  }
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Edited, when game was edited successfully and returns the edited game in the body",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Descriptive message for a Game not found"
+               },
+               "409": {
+                  "description": "Duplicate name error, when there is already a registered game with that name sent in the payload"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Delete a game",
+            "operationId": "deleteGameUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/ResponseEntity"
+                  }
+               },
+               "204": {
+                  "description": "Deleted, when a game was deleted successfully"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Unauthorized access when attempting to delete game"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{id}/issues": {
+         "post": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Add an issue to a game",
+            "operationId": "addIssueUsingPOST",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "issueDTO",
+                  "description": "issueDTO",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/IssueDTOReq"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "201": {
+                  "description": "Created, when issue was created successfully and returns the object of the game with the created issue in the body"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               },
+               "409": {
+                  "description": "Duplicate name error, when there is already a registered"
+               },
+               "422": {
+                  "description": "Invalid input error, when the payload contains a required attribute empty"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{id}/players/{userName}": {
+         "get": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Retrieve a game",
+            "description": "Get a game by its id and username",
+            "operationId": "getGameForPlayersUsingGET",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "userName",
+                  "in": "path",
+                  "description": "userName",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful game retrieval",
+                  "schema": {
+                     "$ref": "#/definitions/GameDTORes"
+                  }
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Descriptive unauthorized request"
+               },
+               "403": {
+                  "description": "Forbidden"
+               },
+               "404": {
+                  "description": "Not Found"
+               }
+            }
+         }
+      },
+      "/planning-poker/games/{id}/players/{userOwner}": {
+         "delete": {
+            "tags": [
+               "game-controller"
+            ],
+            "summary": "Delete a player of a game",
+            "operationId": "removePlayerUsingDELETE",
+            "produces": [
+               "*/*"
+            ],
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "Authorization",
+                  "required": false,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "path",
+                  "description": "id",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "userOwner",
+                  "in": "path",
+                  "description": "userOwner",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "OK",
+                  "schema": {
+                     "$ref": "#/definitions/ResponseEntity"
+                  }
+               },
+               "204": {
+                  "description": "Deleted, when a player was deleted successfully"
+               },
+               "400": {
+                  "description": "Descriptive bad request message according the rules violated"
+               },
+               "401": {
+                  "description": "Unauthorized"
+               },
+               "403": {
+                  "description": "Forbidden"
+               }
+            }
+         }
+      }
+   }
+}

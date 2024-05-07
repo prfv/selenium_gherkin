@@ -1,0 +1,52 @@
+{
+    "name": "pss_testing_framework",
+    "version": "1.0.0",
+    "description": "framework for poker planning",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --ignore-path .gitignore --write \"**/*.js\"",
+        "check-code": "eslint **/*.js",
+        "check-features": "gherkin-lint",
+        "tests": "cucumber-js -p default",
+        "generateReport": "node htmlReport.js",
+        "swaggerTests": "mocha './main/core/api/tests/swaggerRequestManager.test.js' --reporter mochawesome --reporter-options reportFilename=unitTestReport.html,reportDir=./reports/unitTestReport",
+        "unitTests": "mocha './main/core/utils/tests/*.test.js' --reporter mochawesome --reporter-options reportFilename=unitTestReport.html,reportDir=./reports/unitTestReport",
+        "wipTests": "cucumber-js -p default --tags @wip",
+        "apiTests": "cucumber-js -p default --tags @api --retry 3",
+        "uiTests": "cucumber-js -p default --tags @ui --retry 3",
+        "uiProductionTests": "cucumber-js -p default --tags \"@ui and not @onlyLocal\"",
+        "vtTests": "set PERCY_TOKEN=\"web_0fecc29828b4e0665f9a58784dbd16961cf0aefaf81c3d08a7e466ef1dcbd636\" && npx percy exec -- cucumber-js -p default --tags @visualTesting",
+        "lint:fix": "eslint --fix --ext .js,.jsx"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/eslint-parser": "^7.22.5",
+        "@cucumber/cucumber": "^9.2.0",
+        "@cucumber/pretty-formatter": "^1.0.0",
+        "@percy/selenium-webdriver": "^2.0.2",
+        "axios": "^1.5.0",
+        "casual": "^1.6.2",
+        "chance": "^1.1.11",
+        "cucumber-html-reporter": "^7.1.1",
+        "eslint": "^8.50.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "flat": "^5.0.2",
+        "gherkin-lint": "^4.2.2",
+        "jsonschema": "^1.4.1",
+        "log4js": "^6.9.1",
+        "mocha": "^10.2.0",
+        "prettier": "^3.0.3",
+        "selenium-webdriver": "^4.14.1",
+        "swagger-client": "^3.23.1"
+    },
+    "devDependencies": {
+        "@percy/cli": "^1.27.4",
+        "chai": "^4.3.8",
+        "chai-subset": "^1.6.0",
+        "mochawesome": "^7.1.3"
+    }
+}

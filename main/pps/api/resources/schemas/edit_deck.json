@@ -1,0 +1,163 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "id",
+        "name",
+        "isCustom",
+        "isActive",
+        "cards",
+        "userOwner"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "default": "",
+            "title": "The id Schema",
+            "examples": [
+                "-4829049526071267162"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "default": "",
+            "title": "The name Schema",
+            "examples": [
+                "Custom deck"
+            ]
+        },
+        "isCustom": {
+            "type": "boolean",
+            "default": false,
+            "title": "The isCustom Schema",
+            "examples": [
+                true
+            ]
+        },
+        "isActive": {
+            "type": "boolean",
+            "default": false,
+            "title": "The isActive Schema",
+            "examples": [
+                true
+            ]
+        },
+        "cards": {
+            "type": "array",
+            "default": [],
+            "title": "The cards Schema",
+            "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": [
+                    "id",
+                    "value"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "title": "The id Schema",
+                        "examples": [
+                            "-2670917917710136557",
+                            "-7997357804885882449",
+                            "6156315378718035043",
+                            "8297863579831124775",
+                            "3441405726862492856"
+                        ]
+                    },
+                    "value": {
+                        "type": "string",
+                        "title": "The value Schema",
+                        "examples": [
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5"
+                        ]
+                    }
+                },
+                "examples": [{
+                    "id": "-2670917917710136557",
+                    "value": "c1"
+                },
+                {
+                    "id": "-7997357804885882449",
+                    "value": "c2"
+                },
+                {
+                    "id": "6156315378718035043",
+                    "value": "c3"
+                },
+                {
+                    "id": "8297863579831124775",
+                    "value": "c4"
+                },
+                {
+                    "id": "3441405726862492856",
+                    "value": "c5"
+                }]
+            },
+            "examples": [
+                [{
+                    "id": "-2670917917710136557",
+                    "value": "c1"
+                },
+                {
+                    "id": "-7997357804885882449",
+                    "value": "c2"
+                },
+                {
+                    "id": "6156315378718035043",
+                    "value": "c3"
+                },
+                {
+                    "id": "8297863579831124775",
+                    "value": "c4"
+                },
+                {
+                    "id": "3441405726862492856",
+                    "value": "c5"
+                }]
+            ]
+        },
+        "userOwner": {
+            "type": "string",
+            "default": "",
+            "title": "The userOwner Schema",
+            "examples": [
+                "charles"
+            ]
+        }
+    },
+    "examples": [{
+        "id": "-4829049526071267162",
+        "name": "Custom deck",
+        "isCustom": true,
+        "isActive": true,
+        "cards": [{
+            "id": "-2670917917710136557",
+            "value": "c1"
+        },
+        {
+            "id": "-7997357804885882449",
+            "value": "c2"
+        },
+        {
+            "id": "6156315378718035043",
+            "value": "c3"
+        },
+        {
+            "id": "8297863579831124775",
+            "value": "c4"
+        },
+        {
+            "id": "3441405726862492856",
+            "value": "c5"
+        }],
+        "userOwner": "charles"
+    }]
+}

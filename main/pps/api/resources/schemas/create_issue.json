@@ -1,0 +1,641 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "votingIssueId": {
+        "type": "null"
+      },
+      "status": {
+        "type": "string"
+      },
+      "validName": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "facilitator": {
+        "type": "string"
+      },
+      "allowFacilitatorVoting": {
+        "type": "boolean"
+      },
+      "userOwner": {
+        "type": "string"
+      },
+      "deck": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "cards": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "value"
+                ]
+              }
+            ]
+          },
+          "userOwner": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "custom": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "cards",
+          "userOwner",
+          "active",
+          "custom"
+        ]
+      },
+      "isDonutChart": {
+        "type": "boolean"
+      },
+      "playersInGame": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "playerDetails": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "userOwner": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "userOwner"
+                ]
+              },
+              "isSpectator": {
+                "type": "boolean"
+              },
+              "isAvailableToRevealCards": {
+                "type": "boolean"
+              },
+              "isAvailableToManageIssues": {
+                "type": "boolean"
+              },
+              "isPlaying": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "playerDetails",
+              "isSpectator",
+              "isAvailableToRevealCards",
+              "isAvailableToManageIssues",
+              "isPlaying"
+            ]
+          }
+        ]
+      },
+      "issues": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "deck": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "cards": {
+                    "type": "array",
+                    "items": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      }
+                    ]
+                  },
+                  "userOwner": {
+                    "type": "string"
+                  },
+                  "active": {
+                    "type": "boolean"
+                  },
+                  "custom": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "cards",
+                  "userOwner",
+                  "active",
+                  "custom"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "estimation": {
+                "type": "string"
+              },
+              "startTime": {
+                "type": "null"
+              },
+              "endTime": {
+                "type": "null"
+              },
+              "issueVotes": {
+                "type": "array",
+                "items": {}
+              },
+              "isAutoGenerated": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "deck",
+              "id",
+              "name",
+              "description",
+              "estimation",
+              "startTime",
+              "endTime",
+              "issueVotes",
+              "isAutoGenerated"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "deck": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "cards": {
+                    "type": "array",
+                    "items": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "value"
+                        ]
+                      }
+                    ]
+                  },
+                  "userOwner": {
+                    "type": "string"
+                  },
+                  "active": {
+                    "type": "boolean"
+                  },
+                  "custom": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "cards",
+                  "userOwner",
+                  "active",
+                  "custom"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "estimation": {
+                "type": "string"
+              },
+              "startTime": {
+                "type": "null"
+              },
+              "endTime": {
+                "type": "null"
+              },
+              "issueVotes": {
+                "type": "array",
+                "items": {}
+              },
+              "isAutoGenerated": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "deck",
+              "id",
+              "name",
+              "description",
+              "estimation",
+              "startTime",
+              "endTime",
+              "issueVotes",
+              "isAutoGenerated"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "votingIssueId",
+      "status",
+      "validName",
+      "id",
+      "name",
+      "facilitator",
+      "allowFacilitatorVoting",
+      "userOwner",
+      "deck",
+      "isDonutChart",
+      "playersInGame",
+      "issues"
+    ]
+  }

@@ -1,0 +1,29 @@
+{
+    "globals": { "process": "readonly" },
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": ["eslint:recommended"],
+    "parserOptions": {
+        "ecmaVersion": 13
+    },
+    "rules": {
+        "linebreak-style": 0,
+        "indent": ["error", 4],
+        "require-jsdoc": [
+        "error",
+        {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": true,
+                "FunctionExpression": true
+            }
+        }
+        ]
+    }
+}
